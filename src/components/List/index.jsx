@@ -1,31 +1,16 @@
 import * as S from './style';
+import { stepsRegister } from '../../pages/Home';
+import { useControlStep } from '../../hooks/useControlStep';
 
 export const List = () => {
-  const steps = [
-    {
-      name: 'your info',
-      status: 'pendent',
-    },
-    {
-      name: 'select plan',
-      status: 'pendent',
-    },
-    {
-      name: 'add-ons',
-      status: 'pendent',
-    },
-    {
-      name: 'summary',
-      status: 'pendent',
-    },
-  ];
+  const { stepsList } = useControlStep(stepsRegister);
   return (
     <S.Container>
       <S.List>
-        {steps.map((step, index) => (
+        {stepsList.map((step, index) => (
           <S.ListItem
             key={index}
-            className={step.status == 'sucess' && 'passed'}
+            className={step.status == 'sucess' ? 'passed' : 'pendent'}
           >
             <span className="number">{index + 1}</span>
             <div>

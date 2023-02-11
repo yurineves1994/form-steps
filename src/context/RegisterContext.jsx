@@ -1,10 +1,7 @@
 import { createContext, useState } from 'react';
 import { useControlStep } from '../hooks/useControlStep';
-import { Plan } from '../components/Plan';
-import { Additions } from '../components/Additions';
-import { Finishing } from '../components/Finishing';
-import { Finished } from '../components/Finished';
-import { Form } from '../components/Form';
+
+import { stepsRegister } from '../pages/Home';
 
 export const RegisterContext = createContext(null);
 
@@ -12,14 +9,6 @@ export const RegisterProvider = ({ children }) => {
   const [infos, setInfos] = useState('');
   const [plan, setPlan] = useState('');
   const [additions, setAdditions] = useState([]);
-
-  const stepsRegister = [
-    <Form />,
-    <Plan />,
-    <Additions />,
-    <Finishing />,
-    <Finished />,
-  ];
 
   const { currentStep, currentComponent, changeStep } =
     useControlStep(stepsRegister);
