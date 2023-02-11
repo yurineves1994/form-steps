@@ -5,6 +5,19 @@ export const Container = styled.div`
     padding: 50px 100px;
     height: 100%;
     width: 100%;
+
+    @media (max-width: 414px) {
+        padding: 50px;
+        width: 90%;
+        height: auto;
+        background-color: white;
+        border-radius: 25px;
+        z-index: 9999;
+        position: absolute;
+        left: 50%;
+        top: 100px;
+        transform: translateX(-50%);
+    }
 `;
 
 export const Form = styled.form`

@@ -4,6 +4,10 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 50px;
+
+  @media (max-width: 414px) {
+    padding: 25px 0;
+  }
 `;
 
 export const List = styled.ul`
@@ -14,6 +18,13 @@ export const List = styled.ul`
   padding: 50px 0;
   gap: 50px;
   width: 100%;
+
+  @media (max-width: 414px) {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    gap: 25px;
+  }
 `;
 
 export const ListItem = styled.li`
@@ -42,6 +53,10 @@ export const ListItem = styled.li`
     flex-direction: column; 
     align-items: flex-start;
     justify-content: center;
+    
+    @media (max-width: 414px) {
+      display: none;
+    }
     .step {
       color: #9A94FF;
       font-style: normal;

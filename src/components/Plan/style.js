@@ -5,6 +5,19 @@ export const Container = styled.div`
     padding: 50px 100px;
     height: 100%;
     width: 100%;
+
+    @media (max-width: 414px) {
+        padding: 50px;
+        width: 90%;
+        height: auto;
+        background-color: white;
+        border-radius: 25px;
+        z-index: 9999;
+        position: absolute;
+        left: 50%;
+        top: 100px;
+        transform: translateX(-50%);
+    }
 `;
 
 export const Form = styled.form`
@@ -13,6 +26,11 @@ export const Form = styled.form`
     align-items: flex-end;
     justify-content: space-around;
     height: 100%;
+
+    @media (max-width: 414px) {
+      padding: 50px 0;
+      gap: 50px;
+    }
     
     #arcade, #advanced, #pro {
       display: none;
@@ -24,6 +42,11 @@ export const Form = styled.form`
       align-items: center;
       justify-content: space-around;
       gap: 50px;
+
+      @media (max-width: 414px) {
+        flex-direction: column;
+        width: 100%;
+      }
     }
     .box-toggle {
       width: 100%;
@@ -76,6 +99,15 @@ export const Box = styled.label`
 
    min-height: 150px;
    min-width: 125px;
+
+   @media (max-width: 414px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        min-height: 75px;
+      }
 
    img {
     width: 40px;

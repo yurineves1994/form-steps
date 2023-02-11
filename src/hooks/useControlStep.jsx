@@ -23,11 +23,14 @@ export const useControlStep = (steps) => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const changeStep = () => {
-    if (currentStep < 5) {
-      stepsList[currentStep].status = 'sucess';
+    if (currentStep < 4) {
       setCurrentStep(currentStep + 1);
     }
   };
+
+  if (currentStep < 4) {
+    stepsList[currentStep].status = 'sucess';
+  }
 
   return {
     currentStep,
