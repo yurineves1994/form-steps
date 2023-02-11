@@ -16,7 +16,7 @@ export const Container = styled.div`
         top: 50%;
         transform: translateY(-50%);
         left: 10px;
-        background-image: url(src/assets/bg-sidebar.svg);
+        background-image: url(src/assets/bg-sidebar.png);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
