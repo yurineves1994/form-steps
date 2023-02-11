@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import bgSidebar from '../../assets/bg-sidebar.png';
 
 export const Container = styled.div`
     width: 940px;
@@ -16,7 +17,7 @@ export const Container = styled.div`
         top: 50%;
         transform: translateY(-50%);
         left: 10px;
-        background-image: url(src/assets/bg-sidebar.png);
+        background-image: url(${bgSidebar});
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
