@@ -27,6 +27,7 @@ export const Form = () => {
           Nome
           <S.Input
             type="text"
+            required
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -35,6 +36,7 @@ export const Form = () => {
           Adress
           <S.Input
             type="text"
+            required
             value={adress}
             onChange={(e) => setAdress(e.target.value)}
           />
@@ -43,6 +45,7 @@ export const Form = () => {
           Number
           <S.Input
             type="text"
+            required
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           />

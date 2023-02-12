@@ -1,21 +1,39 @@
-import { useContext, useState } from 'react';
+import { useContext, useReducer } from 'react';
 import { RegisterContext } from '../../context/RegisterContext';
 import * as S from './style';
 
+const targetAdditions = (state, action) => {
+  switch (action.type) {
+    case 'ONLINE_SERVICE':
+      return {
+        ...state,
+        onlineService: { contratado: action.payload, price: 1.0 },
+      };
+    case 'LARGE_STORAGE':
+      return {
+        ...state,
+        largeStorage: { contratado: action.payload, price: 2.0 },
+      };
+    case 'CUSTOMIZABLE':
+      return {
+        ...state,
+        customizable: { contratado: action.payload, price: 2.0 },
+      };
+    default:
+      return { state };
+  }
+};
+
 export const Additions = () => {
   const { saveAddittions } = useContext(RegisterContext);
-  const [onlineService, setOnlineService] = useState(false);
-  const [largeStorage, setLargeStorage] = useState(false);
-  const [customizable, setCustomizable] = useState(false);
+  const [additions, additionsDispatch] = useReducer(targetAdditions, {
+    onlineService: { contratado: false, price: 1.0 },
+    largeStorage: { contratado: false, price: 2.0 },
+    customizable: { contratado: false, price: 2.0 },
+  });
 
   const handleForm = (e) => {
     e.preventDefault();
-
-    const additions = {
-      onlineService: onlineService == true ? 'contratado' : 'não-contratado',
-      largeStorage: largeStorage == true ? 'contratado' : 'não-contratado',
-      customizable: customizable == true ? 'contratado' : 'não-contratado',
-    };
 
     saveAddittions(additions);
   };
@@ -32,7 +50,12 @@ export const Additions = () => {
               name="online_service"
               id="online_service"
               value="online_service"
-              onChange={() => setOnlineService(!onlineService)}
+              onChange={() =>
+                additionsDispatch({
+                  type: 'ONLINE_SERVICE',
+                  payload: !additions.onlineService.contratado,
+                })
+              }
             />
             <div className="block_title">
               <span className="title_add">Online service</span>
@@ -48,7 +71,12 @@ export const Additions = () => {
               name="large_storage"
               id="large_storage"
               value="large_storage"
-              onChange={() => setLargeStorage(!largeStorage)}
+              onChange={() =>
+                additionsDispatch({
+                  type: 'LARGE_STORAGE',
+                  payload: !additions.largeStorage.contratado,
+                })
+              }
             />
             <div className="block_title">
               <span className="title_add">Large storage</span>
@@ -64,7 +92,12 @@ export const Additions = () => {
               name="customizable"
               id="customizable"
               value="customizable"
-              onChange={() => setCustomizable(!customizable)}
+              onChange={() =>
+                additionsDispatch({
+                  type: 'CUSTOMIZABLE',
+                  payload: !additions.customizable.contratado,
+                })
+              }
             />
             <div className="block_title">
               <span className="title_add">Customizable profile</span>

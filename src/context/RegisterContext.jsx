@@ -6,12 +6,12 @@ import { stepsRegister } from '../pages/Home';
 export const RegisterContext = createContext(null);
 
 export const RegisterProvider = ({ children }) => {
+  const [user, setUser] = useState({});
   const [infos, setInfos] = useState('');
   const [plan, setPlan] = useState('');
   const [additions, setAdditions] = useState([]);
 
-  const { currentStep, currentComponent, changeStep } =
-    useControlStep(stepsRegister);
+  const { currentComponent, changeStep } = useControlStep(stepsRegister);
 
   const saveInfos = (infos) => {
     setInfos(infos);
@@ -26,8 +26,27 @@ export const RegisterProvider = ({ children }) => {
   };
 
   const saveAddittions = (additions) => {
-    console.log(additions);
     setAdditions(additions);
+    let total = 0;
+    if (additions.onlineService.contratado) {
+      total += additions.onlineService.price;
+    }
+    if (additions.largeStorage.contratado) {
+      total += additions.largeStorage.price;
+    }
+    if (additions.customizable.contratado) {
+      total += additions.customizable.price;
+    }
+
+    total += plan.plan.price;
+
+    setUser({
+      ...infos,
+      ...plan,
+      ...additions,
+      total,
+    });
+
     changeStep();
   };
 
@@ -39,7 +58,6 @@ export const RegisterProvider = ({ children }) => {
     };
     changeStep();
     console.log(user);
-    return user;
   };
 
   return (
@@ -50,6 +68,7 @@ export const RegisterProvider = ({ children }) => {
         savePlan,
         saveAddittions,
         finishRegister,
+        user,
       }}
     >
       {children}

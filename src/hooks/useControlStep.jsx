@@ -33,7 +33,6 @@ export const useControlStep = (steps) => {
   }
 
   return {
-    currentStep,
     currentComponent: steps[currentStep],
     changeStep,
     stepsList,
