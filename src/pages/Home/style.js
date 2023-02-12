@@ -29,7 +29,7 @@ export const Container = styled.div`
     @media (max-width: 414px) {
         width: 100%;
         height: 100vh;
-        position: absolute;
+        /* position: absolute; */
         top: 0;
         left: 0;
         transform: translate(0, 0);
@@ -38,13 +38,13 @@ export const Container = styled.div`
 
         &::after {
             content: "";
-            position: absolute;
+            /* position: absolute; */
             top: 0;
             left: 0;
             background-image: url(${bgSidebarMobile});
-            background-repeat: no-repeat;
+            /* background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: cover; */
             border-radius: 0;  
             height: 300px;
             width: 100%;

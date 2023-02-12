@@ -59,7 +59,6 @@ export const ListItem = styled.li`
     }
     .step {
       color: #9A94FF;
-      font-style: normal;
       font-weight: 300;
       font-size: 12px;
       line-height: 14px;
@@ -67,7 +66,6 @@ export const ListItem = styled.li`
     }
     .step_name {
       color: white;
-      font-style: normal;
       font-weight: 700;
       font-size: 15px;
       line-height: 17px;

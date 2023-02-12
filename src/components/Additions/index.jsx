@@ -21,7 +21,7 @@ export const Additions = () => {
   };
 
   return (
-    <S.Container>
+    <div className="container">
       <h2>Personal info</h2>
       <h3>Please provide your name, email address, and phone number.</h3>
       <S.Form onSubmit={handleForm}>
@@ -73,8 +73,10 @@ export const Additions = () => {
           </div>
           <span className="price_add">+$2/mo</span>
         </label>
-        <button type="submit">Next Step</button>
+        <div className="button">
+          <button type="submit">Next Step</button>
+        </div>
       </S.Form>
-    </S.Container>
+    </div>
   );
 };

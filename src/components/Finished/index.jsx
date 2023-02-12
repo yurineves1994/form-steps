@@ -3,7 +3,7 @@ import iconThankYou from '../../assets/icon-thank-you.png';
 
 export const Finished = () => {
   return (
-    <S.Container>
+    <S.Finished className="container">
       <div className="finished">
         <img src={iconThankYou} />
         <h2>Thank you!</h2>
@@ -13,6 +13,6 @@ export const Finished = () => {
           at support@loremgaming.com.
         </p>
       </div>
-    </S.Container>
+    </S.Finished>
   );
 };

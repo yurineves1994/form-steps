@@ -5,7 +5,7 @@ import * as S from './style';
 export const Finishing = () => {
   const { finishRegister } = useContext(RegisterContext);
   return (
-    <S.Container>
+    <div className="container">
       <h2>Finishing upx</h2>
       <h3>Double-check everything looks OK before confirming.</h3>
       <S.Finishing>
@@ -34,6 +34,6 @@ export const Finishing = () => {
       <div className="button">
         <button onClick={finishRegister}>Confirm</button>
       </div>
-    </S.Container>
+    </div>
   );
 };

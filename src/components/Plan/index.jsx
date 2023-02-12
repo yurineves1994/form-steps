@@ -22,7 +22,7 @@ export const Plan = () => {
     savePlan(planTarget);
   };
   return (
-    <S.Container>
+    <div className="container">
       <h2>Select your plan</h2>
       <h3>You have the option of monthy or yearly billing.</h3>
       <S.Form onSubmit={handleSubmit}>
@@ -80,8 +80,10 @@ export const Plan = () => {
           />
           <label htmlFor="">Yearly</label>
         </div>
-        <button type="submit">Next Step</button>
+        <div className="button">
+          <button type="submit">Next Step</button>
+        </div>
       </S.Form>
-    </S.Container>
+    </div>
   );
 };
